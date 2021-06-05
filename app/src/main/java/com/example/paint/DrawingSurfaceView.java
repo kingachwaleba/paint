@@ -27,7 +27,13 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
 
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder holder) {
+        // Get the dimensions of the drawing surface
+        int width = getWidth();
+        int height = getHeight();
 
+        // Create a bitmap and an associated canvas
+        bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        canvas = new Canvas(bitmap);
     }
 
     @Override
