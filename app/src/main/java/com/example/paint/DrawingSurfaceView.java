@@ -9,8 +9,15 @@ import androidx.annotation.NonNull;
 
 public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Callback, Runnable {
 
+    // Enables to control and monitor a drawing surface
+    private SurfaceHolder surfaceHolder;
+
     public DrawingSurfaceView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        // Surface Holder enables to control and monitor a drawing surface
+        surfaceHolder = getHolder();
+        surfaceHolder.addCallback(this);
     }
 
     @Override
