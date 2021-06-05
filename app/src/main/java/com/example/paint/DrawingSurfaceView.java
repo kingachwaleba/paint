@@ -1,6 +1,8 @@
 package com.example.paint;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -11,6 +13,9 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
 
     // Enables to control and monitor a drawing surface
     private SurfaceHolder surfaceHolder;
+
+    private Bitmap bitmap = null;
+    private Canvas canvas = null;
 
     public DrawingSurfaceView(Context context, AttributeSet attrs) {
         super(context, attrs);
