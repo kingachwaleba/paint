@@ -3,6 +3,7 @@ package com.example.paint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -29,6 +30,11 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         surfaceHolder.addCallback(this);
 
         paint = new Paint();
+
+        paint.setColor(Color.BLUE);
+        paint.setStrokeWidth(2);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setStyle(Paint.Style.STROKE);
     }
 
     @Override
