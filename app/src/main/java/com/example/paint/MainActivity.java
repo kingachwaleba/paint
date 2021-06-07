@@ -26,5 +26,12 @@ public class MainActivity extends AppCompatActivity {
         clearButton = findViewById(R.id.clear_all_button);
 
         drawingSurfaceView = findViewById(R.id.drawing_surface);
+
+        redButton.setOnClickListener(v -> drawingSurfaceView.setColor("red"));
+        yellowButton.setOnClickListener(v -> drawingSurfaceView.setColor("yellow"));
+        blueButton.setOnClickListener(v -> drawingSurfaceView.setColor("blue"));
+        greenButton.setOnClickListener(v -> drawingSurfaceView.setColor("green"));
+
+        clearButton.setOnClickListener(v -> drawingSurfaceView.clearAll());
     }
 }
