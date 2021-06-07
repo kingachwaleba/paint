@@ -53,6 +53,7 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         // Create a bitmap and an associated canvas
         bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
+        canvas.drawARGB(255, 255, 255, 255);
     }
 
     // Handle a touch screen event
