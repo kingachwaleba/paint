@@ -44,13 +44,16 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                // When user touch the screen
                 //
                 break;
             case MotionEvent.ACTION_MOVE:
+                // When user swiped the screen
                 //
                 break;
             case MotionEvent.ACTION_UP:
-
+                // When user stopped touching the screen
+                //
                 break;
         }
         return true;
