@@ -29,6 +29,8 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         surfaceHolder = getHolder();
         surfaceHolder.addCallback(this);
 
+        setWillNotDraw(false);
+
         paint = new Paint();
 
         paint.setColor(Color.BLUE);
