@@ -64,15 +64,22 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 // When user touch the screen
-                //
+                path.reset();
+                canvas.drawCircle(event.getX(), event.getY(), 10, paint);
+                path.moveTo(event.getX(), event.getY());
+                invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 // When user swiped the screen
-                //
+                path.lineTo(event.getX(), event.getY());
+                canvas.drawPath(path, paint);
+                invalidate();
                 break;
             case MotionEvent.ACTION_UP:
                 // When user stopped touching the screen
-                //
+                path.reset();
+                canvas.drawCircle(event.getX(), event.getY(), 10, paint);
+                invalidate();
                 break;
         }
         return true;
