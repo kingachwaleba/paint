@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -19,8 +20,9 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
 
     private Bitmap bitmap = null;
     private Canvas canvas = null;
-
     private Paint paint;
+    private Paint bitmapPaint;
+    private Path path;
 
     public DrawingSurfaceView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -32,6 +34,9 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         setWillNotDraw(false);
 
         paint = new Paint();
+        path = new Path();
+        // DITHER_FLAG - Paint flag that enables dithering when blitting
+        bitmapPaint = new Paint(Paint.DITHER_FLAG);
 
         paint.setColor(Color.BLUE);
         paint.setStrokeWidth(2);
