@@ -106,4 +106,9 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
                 break;
         }
     }
+
+    public void clearAll() {
+        onSizeChanged(getWidth(), getHeight(), getWidth(), getHeight());
+        invalidate();
+    }
 }
