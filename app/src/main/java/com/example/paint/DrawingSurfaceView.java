@@ -40,7 +40,7 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
     // Handle a touch screen event
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
+        performClick();
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -54,6 +54,11 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
                 break;
         }
         return true;
+    }
+
+    @Override
+    public boolean performClick() {
+        return super.performClick();
     }
 
     @Override
