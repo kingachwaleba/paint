@@ -89,4 +89,21 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
     public void run() {
         
     }
+
+    public void setColor(String color) {
+        switch (color) {
+            case "red":
+                paint.setColor(Color.RED);
+                break;
+            case "yellow":
+                paint.setColor(Color.YELLOW);
+                break;
+            case "blue":
+                paint.setColor(Color.BLUE);
+                break;
+            case "green":
+                paint.setColor(Color.GREEN);
+                break;
+        }
+    }
 }
