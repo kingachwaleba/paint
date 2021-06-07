@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -34,6 +35,25 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         // Create a bitmap and an associated canvas
         bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
+    }
+
+    // Handle a touch screen event
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                //
+                break;
+            case MotionEvent.ACTION_MOVE:
+                //
+                break;
+            case MotionEvent.ACTION_UP:
+
+                break;
+        }
+        return true;
     }
 
     @Override
