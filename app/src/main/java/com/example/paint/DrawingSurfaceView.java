@@ -94,7 +94,6 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        paint.setColor(Color.WHITE);
         canvas.drawBitmap(bitmap, 0, 0, bitmapPaint);
         canvas.drawPath(path, paint);
     }
