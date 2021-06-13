@@ -40,8 +40,6 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
 
         paint.setColor(Color.BLUE);
         paint.setStrokeWidth(4);
-        paint.setStyle(Paint.Style.FILL);
-        paint.setStyle(Paint.Style.STROKE);
     }
 
     @Override
@@ -65,12 +63,14 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
             case MotionEvent.ACTION_DOWN:
                 // When user touch the screen
                 path.reset();
+                paint.setStyle(Paint.Style.FILL);
                 canvas.drawCircle(event.getX(), event.getY(), 10, paint);
                 path.moveTo(event.getX(), event.getY());
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 // When user swiped the screen
+                paint.setStyle(Paint.Style.STROKE);
                 path.lineTo(event.getX(), event.getY());
                 canvas.drawPath(path, paint);
                 invalidate();
@@ -78,6 +78,7 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
             case MotionEvent.ACTION_UP:
                 // When user stopped touching the screen
                 path.reset();
+                paint.setStyle(Paint.Style.FILL);
                 canvas.drawCircle(event.getX(), event.getY(), 10, paint);
                 invalidate();
                 break;
