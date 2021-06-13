@@ -94,10 +94,14 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+        try {
+            super.onDraw(canvas);
 
-        canvas.drawBitmap(bitmap, 0, 0, bitmapPaint);
-        canvas.drawPath(path, paint);
+            canvas.drawBitmap(bitmap, 0, 0, bitmapPaint);
+            canvas.drawPath(path, paint);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
 
