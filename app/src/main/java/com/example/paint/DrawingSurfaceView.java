@@ -39,7 +39,7 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         bitmapPaint = new Paint(Paint.DITHER_FLAG);
 
         paint.setColor(Color.BLUE);
-        paint.setStrokeWidth(2);
+        paint.setStrokeWidth(4);
         paint.setStyle(Paint.Style.FILL);
         paint.setStyle(Paint.Style.STROKE);
     }
