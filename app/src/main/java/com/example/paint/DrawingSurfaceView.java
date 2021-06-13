@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -133,7 +134,8 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
     }
 
     public void clearAll() {
-        onSizeChanged(getWidth(), getHeight(), getWidth(), getHeight());
+        canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+        canvas.drawColor(Color.WHITE);
         invalidate();
     }
 }
