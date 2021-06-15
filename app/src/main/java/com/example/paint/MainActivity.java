@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button greenButton;
     private Button clearButton;
     private DrawingSurfaceView drawingSurfaceView;
+    private String chosenColor = "blue";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +30,38 @@ public class MainActivity extends AppCompatActivity {
 
         drawingSurfaceView = findViewById(R.id.drawing_surface);
 
-        redButton.setOnClickListener(v -> drawingSurfaceView.setColor("red"));
-        yellowButton.setOnClickListener(v -> drawingSurfaceView.setColor("yellow"));
-        blueButton.setOnClickListener(v -> drawingSurfaceView.setColor("blue"));
-        greenButton.setOnClickListener(v -> drawingSurfaceView.setColor("green"));
+        redButton.setOnClickListener(v -> {
+            chosenColor = "red";
+            drawingSurfaceView.setColor(chosenColor);
+        });
+
+        yellowButton.setOnClickListener(v -> {
+            chosenColor = "yellow";
+            drawingSurfaceView.setColor(chosenColor);
+        });
+
+        blueButton.setOnClickListener(v -> {
+            chosenColor = "blue";
+            drawingSurfaceView.setColor(chosenColor);
+        });
+
+        greenButton.setOnClickListener(v -> {
+            chosenColor = "green";
+            drawingSurfaceView.setColor(chosenColor);
+        });
 
         clearButton.setOnClickListener(v -> drawingSurfaceView.clearAll());
 
         if(savedInstanceState != null){
             Bitmap bitmap = savedInstanceState.getParcelable("bitmap");
+            String savedColor = savedInstanceState.getString("color");
 
             // Set saved bitmap to canvas in DrawingSurfaceView class
             drawingSurfaceView.setBitmap(bitmap);
             drawingSurfaceView.setIfRotated(true);
+
+            // Set saved color
+            drawingSurfaceView.setColor(savedColor);
         }
     }
 
@@ -51,5 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Save current canvas
         outState.putParcelable("bitmap", drawingSurfaceView.getBitmap());
+        // Save chosen color
+        outState.putString("color", chosenColor);
     }
 }
