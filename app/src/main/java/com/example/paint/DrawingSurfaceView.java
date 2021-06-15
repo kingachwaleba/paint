@@ -144,4 +144,20 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         canvas.drawColor(Color.WHITE);
         invalidate();
     }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
+
+    public boolean isIfRotated() {
+        return ifRotated;
+    }
+
+    public void setIfRotated(boolean ifRotated) {
+        this.ifRotated = ifRotated;
+    }
 }
