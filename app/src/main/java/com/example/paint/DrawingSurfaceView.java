@@ -14,7 +14,7 @@ import android.view.SurfaceView;
 
 import androidx.annotation.NonNull;
 
-public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Callback, Runnable {
+public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
 
     // Enables to control and monitor a drawing surface
     private SurfaceHolder surfaceHolder;
@@ -122,11 +122,6 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
     @Override
     public void surfaceDestroyed(@NonNull SurfaceHolder holder) {
 
-    }
-
-    @Override
-    public void run() {
-        
     }
 
     public void setColor(String color) {
