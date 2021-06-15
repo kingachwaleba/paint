@@ -45,18 +45,6 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         paint.setStrokeWidth(4);
     }
 
-    @Override
-    public void surfaceCreated(@NonNull SurfaceHolder holder) {
-        // Get the dimensions of the drawing surface
-        int width = getWidth();
-        int height = getHeight();
-
-        // Create a bitmap and an associated canvas
-        bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-        canvas = new Canvas(bitmap);
-        canvas.drawARGB(255, 255, 255, 255);
-    }
-
     // Handle a touch screen event
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -106,6 +94,19 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
         }
     }
 
+    @Override
+    public void surfaceCreated(@NonNull SurfaceHolder holder) {
+        // Get the dimensions of the drawing surface
+        int width = getWidth();
+        int height = getHeight();
+
+        if (!ifRotated) {
+            // Create a bitmap and an associated canvas
+            bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            canvas = new Canvas(bitmap);
+            canvas.drawARGB(255, 255, 255, 255);
+        }
+    }
 
     @Override
     public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
