@@ -109,7 +109,13 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
 
     @Override
     public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
-
+        if(bitmap == null) {
+            bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888); //Creating new Bitmap with given size
+        }
+        else if (bitmap != null && ifRotated) {
+            bitmap = Bitmap.createScaledBitmap(bitmap, width, height, false); //Rescaling old bitmap to given size
+        }
+        canvas = new Canvas(bitmap);
     }
 
     @Override
