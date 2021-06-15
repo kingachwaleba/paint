@@ -25,6 +25,8 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
     private Paint bitmapPaint;
     private Path path;
 
+    private boolean ifRotated = false;
+
     public DrawingSurfaceView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
