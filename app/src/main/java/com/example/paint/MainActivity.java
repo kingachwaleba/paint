@@ -54,14 +54,14 @@ public class MainActivity extends AppCompatActivity {
 
         if(savedInstanceState != null){
             Bitmap bitmap = savedInstanceState.getParcelable("bitmap");
-            String savedColor = savedInstanceState.getString("color");
+            chosenColor = savedInstanceState.getString("color");
 
             // Set saved bitmap to canvas in DrawingSurfaceView class
             drawingSurfaceView.setBitmap(bitmap);
             drawingSurfaceView.setIfRotated(true);
 
             // Set saved color
-            drawingSurfaceView.setColor(savedColor);
+            drawingSurfaceView.setColor(chosenColor);
         }
     }
 
